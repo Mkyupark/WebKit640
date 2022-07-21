@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>day01_ex02_table</title>
+    <style>
+        table, td {
+          border: 1px solid black;
+          border-collapse: collapse;
+        }
+        /* 태그 : 태그명
+        아이디 : #
+        클래스 : .
+        속성 : [src], [src="값"] */
+        th {
+            border: 1px solid;
+            background-color: skyblue;
+        }
+    </style>
+</head>
+<body>
+    <h1>길동이의 홈페이지</h1>
+    <table width="300" border="1" bgcolor ="#aaa">
+        <tr height ="100" bgcolor ="#fff">
+            <td colspan ="2" bgcolor="#f00">cell01</td>
+            <td rowspan ="2">cell03</td>
+        </tr>
+        <tr height ="100" bgcolor ="#fff">
+            <td rowspan ="2">cell04</td>
+            <td>cell05</td>
+        </tr>
+        <tr height ="100" bgcolor ="#fff">
+            <td>cell08</td>
+            <td>cell09</td>
+        </tr>
+    </table>
+    <button type ="button" onclick="document.getElementById('demo').innerHTML =Date()">
+    Click me to display Date and Time
+    </button>
+    <p id="demo"></p>
+
+    <table>
+        <tbody>
+            <tr>
+                <th>홍길동</th>
+                <td>변호사</td>
+                <td>900</td>
+            </tr>
+            <tr>
+                <th>김길동</th>
+                <td>의사</td>
+                <td>2000</td>
+            </tr>
+            <tr>
+                <th>박길동</th>
+                <td>프로그래머</td>
+                <td>4500</td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <th>합계</th>
+            <th>-</th>
+            <th>7400</th>
+        </tfoot>
+        <thead>
+            <th>성명</th>
+            <th>직업</th>
+            <th>월급</th>
+        </thead>
+    </table>
+
+</body>
+</html>

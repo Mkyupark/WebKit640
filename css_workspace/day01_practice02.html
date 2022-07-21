@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>목록페이지 구현</title>
+    <style>
+        #addPerson{
+            background-color: rgb(230, 30, 30);
+        }
+        #addPerson:hover{
+            background-color: rgb(236, 107, 120);
+        }
+        table{
+            width:100%;
+        }
+        table,th,td{
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+        th{
+            background-color: orange;
+            text-align: left;
+        }
+    </style>
+</head>
+<body>
+    
+    <label for="name">이름</label><input type="text" id = "name" value ="홍길동"><br/>
+    <label for="department">부서</label><input type="text" id = "dempartment" value ="개발"><br/>
+    <label for="position">직책</label><input type="text" id = "position" value ="대리"><br/>
+    
+    <form action="" method="post" enctype="multipart/form-data">
+        사진:<input type="file" name="myfile"><br/><br/>
+        <input id="addPerson" type="submit" value ="새 사원 추가">
+    </form>
+    <hr>
+    <input type="button" value="선택삭제">
+    <select>
+        <option value="name">이름</option>
+    </select>
+    <input type="text" id="name"><br/>
+    <table>
+        <tr>
+            <th><input type="checkbox"></th>
+            <th>번호</th>
+            <th>사진</th>
+            <th>사원명</th>
+            <th>부서</th>
+            <th>직급</th>
+            <th>수정</th>
+            <th>삭제</th>
+        </tr>
+        <tr>
+            <td rowspan ="2"><input type="checkbox"></td>
+            <td rowspan ="2">1043</td>
+            <td><img src="https://w.namu.la/s/d8db6e871b8e77712495cacc1e775c059ed4e861bad0415543b99264f9f9be10d449e6fecdc26da44b4b1ded2fe0f88b16f1f3481f87e3b044654b693ce53b82c7463dd7a795324c9b7d464efd1fd266fbba40677b003b0807250be620d431d9" width="150px" height ="200px"alt="image"></td>
+            <td>홍길동</td>
+            <td>개발</td>
+            <td>대리</td>
+            <td rowspan ="2"><input type ="button" value="edit"></tdr>
+            <td rowspan ="2"><input type="button" value ="delete"></td>
+        </tr>
+        <tr>
+            <td colspan ="4">
+                <table>
+                    <tr>
+                        <th>번호</th>
+                        <th>댓글내용</th>
+                        <th>작성자</th>
+                        <th>수정</th>
+                        <th>삭제</th>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td>멋진 사진입니다.</td>
+                        <td>박준수</td>
+                        <td>수정</td>
+                        <td>삭제</td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>좋아요^^ 퍼가요</td>
+                        <td>일지매</td>
+                        <td>수정</td>
+                        <td>삭제</td>
+                    </tr>
+                </table>
+                <hr>
+                댓글<input type="text">작성자 <input type="text"><button>댓글입력</button>
+            </td>
+        </tr>
+        </tr>
+
+
+    </table>
+</body>
+</html>

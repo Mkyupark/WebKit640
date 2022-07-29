@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container{
+            border: 1px solid black;
+            width: 456px;
+            height: 150px;
+            overflow: hidden;
+            position: absolute;
+        }
+        .hamburger{
+            width: 150px;
+            float:left;
+            border: 1px solid black;
+            position:relative;
+        }
+        .img{
+            height: 150px;
+            width: 150px;
+        }
+        .cell{
+            border: 1px solid black;
+            height: 1000px;
+            width: 200px;
+            float: left;
+            position: relative;
+        }
+    </style>
+</head>
+
+<body>
+
+    <script>
+        const imgs = {
+            1 : 'img/뉴캐슬.png',
+            2 : 'img/레스터시티.png',
+            3 : 'img/리버풀.png',
+            4 : 'img/맨시티.png',
+            5 : 'img/맨체스터유나이티드.png',
+            6 : 'img/아스날.png',
+            7 : 'img/울버햄튼.png',
+            8 : 'img/웨스트햄.png', 
+            9 : 'img/첼시.png',
+            10 : 'img/토트넘.png'
+        }
+
+        class hamburger{
+            constructor(){
+                this.hamburger = null;
+                this.cells = [];
+                this.init();
+            }
+
+            init(){
+                this.hamburger = document.createElement('div');
+                this.hamburger.className="hamburger";
+                console.log(this.hamburger);
+
+                for(var i=1; i<= 10; i++){
+                    var cell = document.createElement('div');
+                    cell.className = cell;
+                    cell.style.width = "150px";
+                    var img=document.createElement('img');
+                    img.className='img';
+                    img.src = imgs[i];
+                    cell.appendChild(img);
+                    this.hamburger.appendChild(cell);
+                    this.cells.push(cell);
+                }
+            }
+            move() {
+                var x = 0;
+                var target = (Math.floor(Math.random()*10)) * 150;
+                console.log(target);
+                var hamburger = this.hamburger;
+                var interval = setInterval(function() {
+                    x -= 50;
+                    console.log(x);
+                    hamburger.style.top = x + "px";
+                    console.log(hamburger.style.top);
+                    console.log(hamburger);
+                    //hamburger position을 relative 하지 않으면 움직이지 않는다.
+                    //position absolute 하면 left 문제생김 (겹쳐짐)
+                    if(x <= - (target)){
+                        clearInterval(interval);
+                        hamburger.style.top = -target +"px";
+                    }
+                }, 30);
+            }
+        }
+        
+        // if(x <= -(target%800) ) {
+        //                 clearInterval(interval);
+        //                 hamburger.style.top = -(target%800) + "px";
+        //             }
+        class hamburgerhouse{
+            constructor(){
+                this.slot = [];
+                this.h1 = null;
+                this.h2 = null;
+                this.h3 = null;
+                this.init();
+            }
+            init(){
+                var body = document.body;
+                body.innerHTML =`<h1>햄버거 하우스게임</h1> <hr/>`;
+
+                var container = document.createElement('div');
+                container.className = "container";
+                body.appendChild(container);
+                this.hamburgerhouse = document.createElement('div');
+                this.hamburgerhouse.className = "hamburgerhouse";
+                console.log(this);
+                
+                this.h1 = new hamburger();
+                this.h2 = new hamburger();
+                this.h3 = new hamburger();
+
+                console.log(this.h1, this.h2, this. h3);
+                this.hamburgerhouse.appendChild(this.h1.hamburger);
+                this.hamburgerhouse.appendChild(this.h2.hamburger);
+                this.hamburgerhouse.appendChild(this.h3.hamburger);
+
+                container.appendChild(this.hamburgerhouse);
+            }
+
+            start(){
+                this.h1.move();
+                this.h2.move();
+                this.h3.move();
+            }
+
+        }
+
+        function main(){   
+            new hamburgerhouse().start();
+        }
+        window.addEventListener('load', main);
+
+        // 미완성 -> 오류가 생김
+    </script>   
+</body>
+</html>

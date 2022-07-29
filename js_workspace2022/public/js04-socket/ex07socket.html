@@ -10,9 +10,8 @@
         const socket = io.connect('http://localhost:3000');
         socket.on('news', function(data){
             console.log("server data : " + data);
-            socket.emit("client-message", "ok")
+            socket.emit("client-message", "ok");
         })
-
     </script>
 </head>
 <body>  

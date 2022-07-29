@@ -1,6 +1,10 @@
+// socket.io를 사용해보기
+
 const http = require('http');
 const express = require('express');
 const app = express();
+
+
 const cors = require('cors');
 const server = http.createServer(app);
 const { Server } = require("socket.io");

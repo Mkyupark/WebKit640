@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>자바스크립트 function 예제2</h1>
+    <script>
+        function fn01(name){
+            console.log("fn 01 호출: " + name);
+                // console.dir(arguments[0]);
+                // console.dir(arguments[1]);
+                // console.dir(arguments[2]);
+            for(var i =0; i<arguments.length; i++)
+            {
+                console.log('arguments[${i}] => ' + arguments[i]);
+            }
+        }
+        // ES6 이상에서는 rest parameters 사용권장
+        var fn02 =(...args) => {
+            console.log("fn02 호출");
+            args.forEach((item,i) =>{
+                console.log(item,i);
+            })
+        }
+        fn01("홍길동",23);
+        fn02(1111,2222,3333);
+    </script>
+</body>
+</html>

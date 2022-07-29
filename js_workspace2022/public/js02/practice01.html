@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    div.container{
+        border: 3px solid black;
+        height:202px;
+        overflow:visible;
+    }
+    .img{
+        height:200px;
+        width: 200px;
+    }
+    .hamburger{
+        height: 2000px;
+        width:200px;
+        position: absolute;
+        transition:cubic-bezier(0.6, 0.04, 0.98, 0.335);
+    }
+
+</style>
+<body>
+    <h1>햄버거 하우스게임</h1>
+    <hr/>
+    <script>
+        const imgs = {
+            1 : 'img/뉴캐슬.png',
+            2 : 'img/레스터시티.png',
+            3 : 'img/리버풀.png',
+            4 : 'img/맨시티.png',
+            5 : 'img/맨체스터유나이티드.png',
+            6 : 'img/아스날.png',
+            7 : 'img/울버햄튼.png',
+            8 : 'img/웨스트햄.png', 
+            9 : 'img/첼시.png',
+            10 : 'img/토트넘.png'
+        }
+
+        class hamburger{
+            constructor(){
+                this.init();
+                this.hamburger = null;
+            }
+
+            init(){
+                this.hamburger = document.createElement('div');
+                this.hamburger.className="hamburger";
+                console.log(this.hamburger);
+
+                for(var i=1; i<= 10; i++){
+                    var img=document.createElement('img');
+                    img.className='img';
+                    img.src = imgs[i];
+                    this.hamburger.appendChild(img);
+                }
+            }
+            move(){
+                var x =0;
+                setTimeout(() => {
+                    x -200;
+                    this.hamburger.style.top = x + "px";
+                    if(x <= -200) x=0;
+                }, 300);
+            }
+        }
+        class hamburgerhouse{
+            constructor(){
+                this.h1 = null;
+                this.h2 = null;
+                this.h3 = null;
+                this.init();
+            }
+            init(){
+                var container = document.createElement('div');
+                container.className="container";
+                this.hamburgerhouse = document.createElement('div');
+                this.hamburgerhouse.id = "hamburgerhouse";
+                container.appendChild(this.hamburgerhouse);
+
+                this.h1 = new hamburger();
+                this.h2 = new hamburger();
+                this.h3 = new hamburger();
+
+                this.hamburgerhouse.appendChild(this.h1.hamburger);
+                this.hamburgerhouse.appendChild(this.h2.hamburger);
+                this.hamburgerhouse.appendChild(this.h3.hamburger);
+            }
+
+            start(){
+                console.log(this.h1);
+                this.h1.move();
+                this.h2.move();
+                this.h3.move();
+            }
+
+        }
+
+        function main(){    
+            new hamburgerhouse.start();
+        }
+        window.addEventListener('load',main);
+    </script>   
+</body>
+</html>

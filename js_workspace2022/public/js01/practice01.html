@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container{
+            background-color: skyblue;
+            width: 150px;
+            height: 200px;
+            margin: 10px;
+            float: left;
+        }
+        .box{
+            font-size: 10px;
+            width: 100px;
+            position:relative;
+        }
+        
+    </style>
+</head>
+<body>
+    <div class ="container">
+        container 1
+        <div class="box" style ="background-color: red;">BOX1</div>
+        <div class="box" style ="background-color: yellow;">BOX2</div>
+        <div class="box" style ="background-color: green;">BOX3</div>
+    </div class ="container">
+    <div class ="container" id ="empty">
+        container 2
+    </div>
+    <script>
+        let box =document.querySelector(".box");
+
+        box.addEventListener('mousedown',mousedown);
+
+        //box 클릭시
+        
+        function mousedown(event){
+            window.addEventListener('mousemove',moveHandler);
+            box.gapX=box.offsetLeft;
+            box.gapY=box.offsetTop;
+             
+            function moveHandler(e){
+            
+            box.style.left = e2.clientX-box.gapX +'px';
+            box.style.top =e2.clientY -box.gapY + 'px';
+        }
+
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="user-scalable=no,maxinum-scalable=1, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        header{
+            background-image: url("images/img03.jpg");
+            background-size:cover;
+            text-align: center;
+            color:white;
+        }
+        header>button{
+            background-color: rgb(8, 208, 11);
+        }
+        header>button:hover{
+            background-color: rgb(4, 121, 6);
+        }
+        .text-item{
+            border:1px solid black;
+            text-align: center;
+            list-style: none;
+            width:33%;
+            float:left;
+            height: 60px;
+        }
+        li>h5{
+            color:rgb(4, 121, 6);
+        }
+        #ft{
+            background-color:black;
+            clear:both;
+            text-align: center;
+            height:80px;
+        }
+        div>h3{
+            color:white;
+            float:both;
+        }
+    
+        @media screen and (max-width:800px) {
+            body{
+                background-color: black;
+            }
+            header{
+                background-color: antiquewhite;
+            }
+            .text-item{
+                background-color: aqua;
+                float:none;
+                width:auto;
+                height:auto;
+            }
+            #ft{
+                background-color: aquamarine;
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <header>
+        <h1> Create a Free Website</h1>
+        <h3> Everything you need right in the browser</h3>
+        <p> Build you own website with <span style="color:pink">W3schools Spaces.</span> It is easy to use -try it!</p>
+        <button>Get started for free</button>
+    </header>
+    <div>
+        <li class="text-item"><h5>Website</h5>1</li>
+        <li class="text-item"><h5>Website</h5>2</li>
+        <li class="text-item"><h5>Website</h5>3</li>
+        <li class="text-item"><h5>Website</h5>4</li>
+        <li class="text-item"><h5>Website</h5>5</li>
+        <li class="text-item"><h5>Website</h5>6</li>
+    </div>
+    <div id="ft">
+        <h3>How it works</h3>
+    </div>
+    
+</body>
+</html>

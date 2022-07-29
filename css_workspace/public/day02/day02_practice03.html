@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            background-color: orange;
+            position:center;
+            text-align: center;
+            font-size: 15px;
+        }
+        header,nav,footer,aside,section{
+            background-color: gainsboro;
+        }
+        header, nav, footer{
+            width:100%;
+            margin-top:5px;
+        }
+        div{
+            width: 100%;
+            margin-top: 8px;
+            height:200px;
+        }
+        aside{
+            width:25%;
+            height:100%;
+        }
+        section{
+            width: 48%;
+            height:100%;
+            float:left;
+        }
+        article{
+            background-color: aqua;
+            margin-top:8px;
+        }
+    </style>
+</head>
+<body>
+    <header>header</header>
+    <nav>nav</nav>
+    <div> 
+        <aside style="float:left; margin-right:10px">aside</aside>
+            <section>
+                section
+                <article>article</article>
+                <article>article</article>
+                <article>article</article>
+            </section> 
+        <aside style="float:right; margin-left:10px">aside</aside> 
+    </div>
+    <footer>footer</footer>
+</body>
+</html>

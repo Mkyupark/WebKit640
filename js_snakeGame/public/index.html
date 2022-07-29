@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            color:white;
+        }
+        body{
+            background-color: black;
+        }
+        .container{
+            border:3px solid white;
+            width: 500px;
+            height: 500px;
+            float:left;
+        }
+        .bulletinBoard{
+            height: 500px;
+            border: 3px solid white;
+            width : 200px;
+            float: left;
+        }
+        .bulletinBoard div{
+            text-align: center;
+            border: none;
+        }
+        .box{
+            height: 150px;
+        }
+        .shape{
+            height: 25px;
+            width: 25px;
+            background-color: greenyellow;
+        }
+    </style>
+</head>
+<body>
+    <h1>SNAKE GAME</h1>
+    <div class ="container">
+        <div class ="shape"></div>
+    </div>
+    <div class ="bulletinBoard">
+        <div><h3>점수판</h3></div><hr/>
+        <div class = "box">
+            <div>Total Score : </div>
+            <div>Fruit Eaten : </div>
+            <div>Fruit Score : </div>
+        </div>
+        <hr/><div><h3>조작법</h3></div><hr/>
+        <div class = "box">
+            <div>Move Up: W / ↑</div>
+            <div>Move down: S / ↓ </div>
+            <div>Move left: A / ←</div>
+            <div>Move right: D / →</div>
+        </div>
+    </div>
+    <script>
+        var num = 1;
+        let shape = document.querySelector('.shape');
+
+
+        window.setTimeout(onload,() => {
+            if(num == 1){
+                shape.style.top = 250 +'px'; 
+                console.log(shape);
+            }
+        }, 300);
+
+    </script>
+</body>
+</html>

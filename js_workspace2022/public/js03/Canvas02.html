@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=&& input.files[0], initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        canvas#myCanvas{
+            border: solid 1px blue;
+        }
+    </style>
+</head>
+<body>
+    <canvas id ="myCanvas" width = "640" height = "480"></canvas>
+
+    <script>
+        //getcontext 2d -> 2D를 의미한다
+        var canvas = document.getElementById("myCanvas");
+        var ctx =canvas.getContext("2d");
+
+        var drawing = false;
+
+        ctx.lineStyle = "black";
+        ctx.lineWidth = 2;
+        ctx.beginPath();
+        //e -> mouse의 움직임
+        canvas.addEventListener('mouseup', (e) =>{
+            drawing =false;
+            ctx.moveTo(e.offsetX, e.offsetY);
+        })
+        canvas.addEventListener('mousedown', (e) =>{
+            drawing =true;
+        })
+        canvas.addEventListener('mousemove', (e) =>{
+            if(drawing){
+                ctx.lineTo(e.offsetX, e.offsetY);
+                ctx.stroke();
+            }
+        })
+        
+
+    </script>
+
+</body>
+</html>

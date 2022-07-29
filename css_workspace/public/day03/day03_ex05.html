@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="user-scalable=no,maxinum-scalable=1, initial-scale=1.0">
+    <title>Document</title>
+</head>
+    <style>
+        *{
+            margin:3px;
+            padding:3px;
+            border:1px solid gray;
+            border-radius: 6px;
+            box-sizing: border-box;
+        }
+        body, div.content{
+            background-color: pink;
+            margin: 0;
+            padding: 0;
+            border:0;
+            border-radius: 0;
+        } 
+        section,aside{
+            float:left;
+            height:400px;
+        }
+        aside{
+            width:20%;
+        }
+        section{
+            width:58%;
+        }
+        footer{
+            clear:both;
+        }
+        section>p{
+            height:200px;
+        }
+
+        @media screen and (max-width: 767px) {
+            body{
+                background-color: skyblue;
+            }
+        }
+    </style>
+<body>
+    <head>
+        <div class="content">
+            <header>header</header>
+            <nav>menu</nav>
+            <aside>left side</aside>
+            <section>
+                <p>main
+                    <article>내용1</article>
+                    <article>내용2</article>
+                    <article>내용3</article>
+                </p>
+            </section>
+            <aside>right side</aside>
+            <footer>(c) Comstudy. 범준쌤의 코딩교실</footer>
+        </div>
+    </head>
+</body>
+</html>

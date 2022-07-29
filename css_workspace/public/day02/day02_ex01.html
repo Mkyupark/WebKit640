@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS 기초</title>
+    <style>
+        *{
+            padding: 5px;
+            margin: 3px;
+            border: 1px solid gray;
+            border-radius: 6px;
+        }
+        body{
+            background-color: yellow;
+            color:navy;
+        }
+
+        /*선택기와 선택기 사이에 공백이 없음 ( */
+        input[type=text]{
+            border-color: red;
+            width: 100%;
+            padding: 6px 10px 3px 0px;
+        }
+        input[name=input1]{
+            background-color: skyblue;
+            border:0px;
+            border-bottom: 3px solic    navy;
+            border: 0;
+            color:wh
+            ite;
+        }
+        input[type = submit] {
+            background: linear-gradient(
+                65deg,
+                rgba(15, 37, 110, 1) 12%,
+                rgba(32, 78, 207, 1) 24%
+            );
+            text-shadow: 6px 0px 0px rgba(0, 0, 0, 0.3);
+         }
+         input[name = input2]{
+                width:100px;
+                transition: width 2s, height 2s;
+
+         }
+         input[name=input2]:focus{
+            width:100%;
+            height: 40px;
+         }
+    </style>
+</head>
+<body>
+    <h1>CSS 기본 - Form 꾸미기</h1>
+    <!--
+        * -> 모든 요소를 말함.
+        fieldset은 레이블을 묶을 때 사용한다. 
+        legend는 묶은 레이블의 이름
+    -->
+    <fieldset>
+        <legend>HTML Form 스타일</legend>
+            <form action="">
+            input1:<input type ="text" name = "input1"/> <br/>
+            input2:<input type ="text" name = "input2"/> <br/>
+            input3:<input type ="text" name = "input3"/> <br/>
+            <input type="submit" value ="전송">
+            </form>
+    </fieldset>
+</body>
+</html>
